@@ -1,5 +1,6 @@
 package com.mftplus.controller;
 
+import com.mftplus.model.bl.MemberBl;
 import com.mftplus.model.entity.Member;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -35,12 +36,17 @@ public class MemberController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         System.out.println("Window Opened");
+        saveBtn.setOnAction(event -> {
+            try {
+                showMembersOnTable(MemberBl.getInstance().findAll());
+            }catch (Exception e){
+
+            }
+        });
     }
 
     private void showMembersOnTable(List<Member> memberList) {
-        System.out.println(memberList);
         ObservableList<Member> memberObservableList = FXCollections.observableList(memberList);
-        System.out.println(memberObservableList);
 
         idCol.setCellValueFactory(new PropertyValueFactory<>("id"));
         nameCol.setCellValueFactory(new PropertyValueFactory<>("name"));
