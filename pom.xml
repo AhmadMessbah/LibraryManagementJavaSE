@@ -90,14 +90,10 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <mainClass>com.mftplus.Main</mainClass>
+                    <mainClass>com.mftplus.App</mainClass>
                 </configuration>
             </plugin>
         </plugins>
-        <resources>
-            <resource>
-                <directory>./src/main/java/resources</directory>
-            </resource>
-        </resources>
+
     </build>
 </project>

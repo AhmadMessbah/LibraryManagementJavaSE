@@ -14,7 +14,7 @@ import java.time.LocalDate;
 @Slf4j
 public class Main {
     public static void main(String[] args) throws Exception {
-        log.info("App Started");
+        log.info("com.mftplus.App Started");
 
 //        Member member = new Member("Ahmad", "Messbah");
 //        MemberBl.getInstance().save(member);
@@ -41,8 +41,8 @@ public class Main {
 //        System.out.println(BorrowBl.getInstance().findReturned());
 //        System.out.println(BorrowBl.getInstance().findUnreturned());
 
-        BorrowBl.getInstance().returnBookById(4L, LocalDate.now());
+//        BorrowBl.getInstance().returnBookById(4L, LocalDate.now());
 
-        log.info("App Closed");
+//        log.info("com.mftplus.App Closed");
     }
 }

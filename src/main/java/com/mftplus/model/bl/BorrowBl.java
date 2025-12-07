@@ -17,6 +17,9 @@ public class BorrowBl implements BusinessLogic<Borrow, Long> {
 
     @Override
     public void save(Borrow borrow) throws Exception {
+        if(borrowDa.findCountByUnreturnedByMemberId(borrow.getMember().getId())>0){
+            throw new Exception("Member has unreturned book !!!");
+        }
         borrowDa.save(borrow);
     }
 
@@ -55,7 +58,6 @@ public class BorrowBl implements BusinessLogic<Borrow, Long> {
     public List<Borrow> findUnreturned() throws Exception {
         return borrowDa.findUnreturned();
     }
-
 
     public List<Borrow> findByBookId(Long bookId) throws Exception {
         return borrowDa.findByBookId(bookId);
