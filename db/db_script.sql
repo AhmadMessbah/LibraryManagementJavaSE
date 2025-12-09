@@ -2,7 +2,10 @@ create table members
 (
     id     number primary key,
     name   nvarchar2(20),
-    family nvarchar2(20)
+    family nvarchar2(20),
+    birth_date date,
+    gender nvarchar2(6),
+    city nvarchar2(15)
 );
 create sequence member_seq start with 1 increment by 1;
 
