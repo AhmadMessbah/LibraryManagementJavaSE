@@ -54,7 +54,6 @@ public class ReturnViewController implements Initializable {
             } catch (Exception e) {
                 Alert alert = new Alert(Alert.AlertType.ERROR, "Error Borrowing Book\n" + e.getMessage(), ButtonType.OK);
                 alert.show();
-                e.printStackTrace();
 
             }
         });
@@ -85,7 +84,6 @@ public class ReturnViewController implements Initializable {
         } catch (Exception e) {
             Alert alert = new Alert(Alert.AlertType.ERROR, "Error Loading Borrows\n" + e.getMessage(), ButtonType.OK);
             alert.show();
-            e.printStackTrace();
         }
     }
 
