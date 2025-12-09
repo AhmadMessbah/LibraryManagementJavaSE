@@ -46,9 +46,8 @@ public class ReturnViewController implements Initializable {
 
         returnBtn.setOnAction(event -> {
             try {
-                BorrowDto borrowDto =  borrowTbl.getSelectionModel().getSelectedItem();
-                Borrow borrow = BorrowBl.getInstance().findById(borrowDto.getId());
-                BorrowBl.getInstance().returnBookById(borrow.getBook().getId(), LocalDate.now());
+                BorrowDto borrowDto = borrowTbl.getSelectionModel().getSelectedItem();
+                BorrowBl.getInstance().returnBookById(borrowDto.getId(), LocalDate.now());
                 Alert alert = new Alert(Alert.AlertType.INFORMATION, "Book Borrowed to Member", ButtonType.OK);
                 alert.show();
                 showDataOnTable();
@@ -64,18 +63,18 @@ public class ReturnViewController implements Initializable {
 
     public void showDataOnTable() {
         try {
-        List<Borrow> borrowList = BorrowBl.getInstance().findUnreturned();
+            List<Borrow> borrowList = BorrowBl.getInstance().findUnreturned();
             System.out.println("DATA : ");
             System.out.println(borrowList);
-        List<BorrowDto> borrowDtoList =
-                borrowList
-                        .stream()
-                        .map(BorrowDto::new)
-                        .collect(Collectors.toList());
+            List<BorrowDto> borrowDtoList =
+                    borrowList
+                            .stream()
+                            .map(BorrowDto::new)
+                            .collect(Collectors.toList());
 
 
-        ObservableList<BorrowDto> observableList = FXCollections.observableList(borrowDtoList);
-
+            ObservableList<BorrowDto> observableList = FXCollections.observableList(borrowDtoList);
+            idCol.setCellValueFactory(new PropertyValueFactory<>("borrowId"));
             memberNameCol.setCellValueFactory(new PropertyValueFactory<>("memberName"));
             memberFamilyCol.setCellValueFactory(new PropertyValueFactory<>("memberFamily"));
             bookTitleCol.setCellValueFactory(new PropertyValueFactory<>("bookTitle"));

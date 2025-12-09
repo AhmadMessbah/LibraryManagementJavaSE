@@ -24,7 +24,7 @@ public class SqlCommands {
         public final static String BORROW_RETURN_BOOK_BY_ID = "UPDATE BORROWS SET RETURN_DATE=? WHERE ID=?";
         public final static String BORROW_DELETE = "DELETE FROM BORROWS WHERE ID=?";
         public final static String BORROW_SELECT_ALL = "SELECT * FROM BORROW_VIEW";
-        public final static String BORROW_SELECT_BY_ID = "SELECT * FROM BORROW_VIEW WHERE ID=?";
+        public final static String BORROW_SELECT_BY_ID = "SELECT * FROM BORROW_VIEW WHERE BORROW_ID=?";
         public final static String BORROW_SELECT_BY_MEMBER_ID = "SELECT * FROM BORROW_VIEW WHERE MEMBER_ID=?";
         public final static String BORROW_SELECT_BY_BOOK_ID = "SELECT * FROM BORROW_VIEW WHERE BOOK_ID=?";
         public final static String BORROW_SELECT_RETURNED = "SELECT * FROM BORROW_VIEW WHERE RETURN_DATE IS NOT NULL";
