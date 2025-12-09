@@ -1,11 +1,13 @@
 package com.mftplus.model.dao;
 
+import com.mftplus.model.entity.Gender;
 import com.mftplus.model.entity.Member;
 import com.mftplus.model.mapper.MemberMapper;
 import com.mftplus.model.utils.ConnectionProvider;
 import com.mftplus.model.utils.SqlCommands;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
@@ -21,6 +23,9 @@ public class MemberDa implements DataAccessObject<Member,Long> {
             preparedStatement.setLong(1, member.getId());
             preparedStatement.setString(2, member.getName());
             preparedStatement.setString(3, member.getFamily());
+            preparedStatement.setDate(4, Date.valueOf(member.getBirthDate()));
+            preparedStatement.setString(5, member.getGender().name());
+            preparedStatement.setString(6, member.getCity().name());
             preparedStatement.execute();
         }
     }
@@ -32,7 +37,10 @@ public class MemberDa implements DataAccessObject<Member,Long> {
         ){
             preparedStatement.setString(1, member.getName());
             preparedStatement.setString(2, member.getFamily());
-            preparedStatement.setLong(3, member.getId());
+            preparedStatement.setDate(3, Date.valueOf(member.getBirthDate()));
+            preparedStatement.setString(4, member.getGender().name());
+            preparedStatement.setString(5, member.getCity().name());
+            preparedStatement.setLong(6, member.getId());
             preparedStatement.execute();
         }
     }

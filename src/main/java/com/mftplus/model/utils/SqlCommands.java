@@ -2,11 +2,11 @@ package com.mftplus.model.utils;
 
 public class SqlCommands {
     public static class Member{
-        public final static String MEMBER_INSERT = "INSERT INTO MEMBERS VALUES (?,?,?)";
-        public final static String MEMBER_UPDATE = "UPDATE MEMBERS SET NAME=?, FAMILY=? WHERE ID=?";
+        public final static String MEMBER_INSERT = "INSERT INTO MEMBERS VALUES (?,?,?,?,?,?)";
+        public final static String MEMBER_UPDATE = "UPDATE MEMBERS SET NAME=?, FAMILY=?, BIRTH_DATE=?, GENDER=?, CITY=? WHERE ID=?";
         public final static String MEMBER_DELETE = "DELETE FROM MEMBERS WHERE ID=?";
-        public final static String MEMBER_SELECT_BY_ID = "SELECT ID AS MEMBER_ID, NAME AS MEMBER_NAME, FAMILY AS MEMBER_FAMILY FROM MEMBERS WHERE ID=?";
-        public final static String MEMBER_SELECT_ALL = "SELECT ID AS MEMBER_ID, NAME AS MEMBER_NAME, FAMILY AS MEMBER_FAMILY FROM MEMBERS";
+        public final static String MEMBER_SELECT_BY_ID = "SELECT ID AS MEMBER_ID, NAME AS MEMBER_NAME, FAMILY AS MEMBER_FAMILY, BIRTH_DATE AS MEMBER_BIRTH_DATE, GENDER AS MEMBER_GENDER, CITY AS MEMBER_CITY FROM MEMBERS WHERE ID=?";
+        public final static String MEMBER_SELECT_ALL = "SELECT ID AS MEMBER_ID, NAME AS MEMBER_NAME, FAMILY AS MEMBER_FAMILY, BIRTH_DATE AS MEMBER_BIRTH_DATE, GENDER AS MEMBER_GENDER, CITY AS MEMBER_CITY FROM MEMBERS";
     }
 
     public static class Book{
