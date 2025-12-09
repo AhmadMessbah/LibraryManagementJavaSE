@@ -99,7 +99,7 @@ public class MemberViewController implements Initializable {
 
         removeBtn.setOnAction(event -> {
             try{
-                MemberBl.getInstance().deleteById(Long.valueOf(idTxt.getText()));
+                MemberBl.getInstance().logicalDeleteById(Long.valueOf(idTxt.getText()));
                 Alert alert = new Alert(Alert.AlertType.INFORMATION, "Member Deleted", ButtonType.OK);
                 alert.show();
                 reset_form();

@@ -5,7 +5,8 @@ create table members
     family     nvarchar2(20),
     birth_date date,
     gender     nvarchar2(6),
-    city       nvarchar2(15)
+    city       nvarchar2(15),
+    deleted number(1) default 0
 );
 
 create sequence member_seq start with 1 increment by 1;

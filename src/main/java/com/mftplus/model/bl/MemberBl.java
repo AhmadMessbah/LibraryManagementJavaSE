@@ -29,6 +29,10 @@ public class MemberBl implements BusinessLogic<Member, Long> {
         memberDa.deleteById(id);
     }
 
+    public void logicalDeleteById(Long id) throws Exception {
+        memberDa.logicalDeleteById(id);
+    }
+
     @Override
     public Member findById(Long id) throws Exception {
         return memberDa.findById(id);
